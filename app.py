@@ -48,17 +48,25 @@ def main() -> None:
         st.subheader("Models")
         openai_model = st.selectbox(
             "OpenAI model",
-            ["gpt-4o", "gpt-4o-mini", "gpt-4.1", "gpt-4.1-mini"],
+            [
+                "gpt-5.4-mini",
+                "gpt-5.4-mini-2026-03-17",
+                "gpt-5.4",
+                "gpt-5.4-nano",
+                "gpt-4o",
+            ],
             index=0,
+            help="IDs from OpenAI model docs; `gpt-5.4-mini` is the current default alias.",
         )
         anthropic_model = st.selectbox(
             "Anthropic model",
             [
+                "claude-sonnet-4-6",
                 "claude-sonnet-4-20250514",
                 "claude-3-5-sonnet-20241022",
-                "claude-3-5-haiku-20241022",
             ],
             index=0,
+            help="`claude-sonnet-4-6` is the Sonnet 4.6 API id; older ids kept as fallbacks.",
         )
         cross_review = st.checkbox("Cross-review round (each sees the other's answer)", value=True)
 
